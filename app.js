@@ -66,23 +66,29 @@ app.post("/messageFromGenesys", (req, res) => {
   // verify message signature
   const normalizedMessage = req.body
   const signature = req.headers["x-hub-signature-256"]
-  const secretToken = "MySecretSignature"
+  const secretToken = "Signature"
   const messageHash = crypto
     .createHmac("sha256", secretToken)
     .update(JSON.stringify(normalizedMessage))
     .digest("base64")
 
-  if (`sha256=${messageHash}` === signature) {
-    console.log(JSON.stringify(req.headers))
-    console.log(req.body) // Call your action on the request here
-    console.log("\nGenesys> " + req.body.text)
-    transcript.push({
-      sender: "Genesys",
-      message: req.body.text,
-      purpose: "agent",
-    })
-  } else {
-    console.log("Webhook Validation Failed!");
+  try {
+
+    if (`sha256=${messageHash}` === signature) {
+      console.log(JSON.stringify(req.headers))
+      console.log(req.body) // Call your action on the request here
+      console.log("\nGenesys> " + req.body.text)
+      transcript.push({
+        sender: "Genesys",
+        message: req.body.text,
+        purpose: "agent",
+      })
+    } else {
+      console.log("Webhook Validation Failed!");
+    }
+  }
+  catch (e) {
+    console.log(e)
   }
 
   res.status(200).end() // Responding is important
@@ -173,8 +179,12 @@ function sendMessageToGenesys(data) {
     console.error(error)
   })
 
-  apireq.write(body)
-  apireq.end()
+  if (body.text == "undefined") {
+    console.log("Undefined.")
+  } else {
+    apireq.write(body)
+    apireq.end()
+  }
 }
 
 /******************************************************************
