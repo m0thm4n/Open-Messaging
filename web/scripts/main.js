@@ -81,11 +81,11 @@ function sendChat() {
       type: "POST",
       url: "/messageToGenesys",
       data: {
-        nickname: "Vivek",
-        id: "vivek.patel2@genesys.com",
+        nickname: "Nathan",
+        id: "nathan.moritz@genesys.com",
         idType: "email",
-        firstName: "Vivek",
-        lastName: "Patel",
+        firstName: "Nathan",
+        lastName: "Moritz",
         message: message,
       },
       success: function (data) {
