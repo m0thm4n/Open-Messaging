@@ -55,3 +55,6 @@ Go to: https://nodejs.org/dist/v16.16.0/node-v16.16.0.pkg
 
 ```node app.js```
 
+### Troubleshooting
+
+You will see undefined come up in the messages. This is unknown behavior and not expected working to determine the cause of this.
