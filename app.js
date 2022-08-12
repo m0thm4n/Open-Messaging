@@ -82,7 +82,7 @@ app.post("/messageFromGenesys", (req, res) => {
       purpose: "agent",
     })
   } else {
-    //console.log("Webhook Validation Failed!");
+    console.log("Webhook Validation Failed!");
   }
 
   res.status(200).end() // Responding is important
