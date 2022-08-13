@@ -1,5 +1,19 @@
 # Open Messaging built using NodeJS
 
+### To clone via the git CLI
+###### Installing Git
+Git download URL: https://git-scm.com/downloads
+
+###### Clone to PC
+**Instructions for Windows**
+```
+Open powershell.exe as administrator
+cd Desktop
+git clone https://github.com/m0thm4n/Open-Messaging.git
+cd Open-Messaging
+node app.js
+```
+
 ### Configuring the .env file
 ###### The .env file needs to configured with your own settings
 ```
