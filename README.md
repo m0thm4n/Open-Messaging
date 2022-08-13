@@ -1,10 +1,10 @@
 # Open Messaging built using NodeJS
 
 ### To clone via the git CLI
-###### Installing Git
+#### Installing Git
 Git download URL: https://git-scm.com/downloads
 
-###### Clone to PC
+#### Clone to PC
 **Instructions for Windows**
 ```
 Open powershell.exe as administrator
