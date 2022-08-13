@@ -1,5 +1,21 @@
 # Open Messaging built using NodeJS
 
+### Configuring the .env file
+###### The .env file needs to configured with your own settings
+```
+clientId = "" # OAuth client ID
+clientSecret = "" # OAuth client secret
+messageDeployment = "" # Your Open Messaging Integration ID
+region = "" # The API region for your org
+environment = "" # The region for your test org
+
+THESE ARE ALL NOT CURRENTLY IMPLEMENTED
+nickname = "" # The nickname you want to use
+email = "" # The email you want to use
+firstName = "" # The first name you want to use
+lastName = "" # The last name you want to use
+```
+
 ### Installing NodeJS
 
 #### Download links

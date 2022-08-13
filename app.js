@@ -179,12 +179,9 @@ function sendMessageToGenesys(data) {
     console.error(error)
   })
 
-  if (body.text == "undefined") {
-    console.log("Undefined.")
-  } else {
-    apireq.write(body)
-    apireq.end()
-  }
+  
+  apireq.write(body)
+  apireq.end()
 }
 
 /******************************************************************
